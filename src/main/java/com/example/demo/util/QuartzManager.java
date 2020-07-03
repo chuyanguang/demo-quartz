@@ -199,7 +199,7 @@ public class QuartzManager {
         try {
             GroupMatcher<JobKey> matcher = GroupMatcher.anyJobGroup();
             Set<JobKey> jobKeys = scheduler.getJobKeys(matcher);
-            jobList = new ArrayList<Map<String, Object>>();
+            jobList = new ArrayList<>();
             for (JobKey jobKey : jobKeys) {
                 List<? extends Trigger> triggers = scheduler.getTriggersOfJob(jobKey);
                 for (Trigger trigger : triggers) {
